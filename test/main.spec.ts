@@ -1,4 +1,4 @@
-import {calculateBowlingScore} from '../src/main';
+import { calculateBowlingScore } from "../src/main";
 
 /**
  * TODO: Bowling kata
@@ -10,19 +10,25 @@ import {calculateBowlingScore} from '../src/main';
  * * Correctly interpret spares.
  * * Correctly interpret strikes.
  */
-describe('Bowling kata should', () => {
-  it('Add all simple points', () => {
-    const game = '52 52 52 52 52 52 52 52 52 52';
+describe("Bowling kata should", () => {
+  it("Add all simple points", () => {
+    const game = "52 52 52 52 52 52 52 52 52 52";
     expect(calculateBowlingScore(game)).toBe(70);
   });
 
-  it('Correctly interpret misses', () => {
-    const game = '5- 5- 5- 5- 5- 5- 5- 5- 5- 5-';
+  it("Correctly interpret misses", () => {
+    const game = "5- 5- 5- 5- 5- 5- 5- 5- 5- 5-";
     expect(calculateBowlingScore(game)).toBe(50);
   });
 
-  it('Correctly interpret spares', () => {
-    const game = '5/ 5/ 5/ 5/ 5/ 5/ 5/ 5/ 5/ 5/5';
+  it("Correctly interpret spares", () => {
+    const game = "5/ 5/ 5/ 5/ 5/ 5/ 5/ 5/ 5/ 5/5";
+
     expect(calculateBowlingScore(game)).toBe(150);
+  });
+
+  it("Correctly interpret strikes", () => {
+    const game = "x x x x x x x x x x x x";
+    expect(calculateBowlingScore(game)).toBe(300);
   });
 });
